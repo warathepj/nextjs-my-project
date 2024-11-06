@@ -7,3 +7,9 @@ body {
     background-color: #000033;
     color: #c9c9fa;
 }
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}

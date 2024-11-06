@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useState, useContext } from "react";
 import { useProjectContext } from "../../../../../context/ProjectContext";
+import ProjectDetailCard from "@/components/project-detail-card";
 
 const Project = ({ params }) => {
   console.log("params.projectId: ", params.projectId);
   const param = params.projectId;
   const [data, setData] = useState(null);
   const { projects } = useProjectContext();
-  const project = projects.filter(project => project.id.includes(param));
+  const project = projects.filter((project) => project.id.includes(param));
   console.log("@@@@@@@@@@project: ", project);
   // const image = images.filter(image => image.tag.includes(param));
   // useEffect(() => {
@@ -32,8 +33,19 @@ const Project = ({ params }) => {
       Project
       <p>param: {param}</p>
       <p>project.name: {project.name}</p>
-      <ul>
-        {project.map((p) => (
+      {project.map((p) => (
+        <ProjectDetailCard
+          name={p.name}
+          description={p.description}
+          techStack={p.techStack}
+          functions={p.function}
+          images={p.images}
+          web={p.web}
+          github={p.github}
+        />
+      ))}
+      {/* <ul> */}
+        {/* {project.map((p) => (
           <li key={p.id}>
             <h2>{p.name}</h2>
             <p>{p.description}</p>
@@ -47,8 +59,8 @@ const Project = ({ params }) => {
             </ul>
             <p>Function: {p?.["function"].join(", ")}</p>
           </li>
-        ))}
-      </ul>
+        ))} */}
+      {/* </ul> */}
       {/* <p>project name: {projectName}</p>
       <p>description: {description}</p>
       <ul>

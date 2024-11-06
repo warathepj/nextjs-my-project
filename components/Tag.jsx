@@ -40,11 +40,11 @@ const Tag = () => {
         NavBar
         {/* <p>--------------DEBUG START--------------</p> */}
         <div>
-      <p>Rendered JSON Data</p>
-      {data && (
+      {/* <p>Rendered JSON Data</p> */}
+      {/* {data && (
         <p>{JSON.stringify(data, null, 2)}</p> // Render the JSON data inside a <pre> tag
-      )}
-       <p>className: {nameClass}</p>
+      )} */}
+       {/* <p>className: {nameClass}</p> */}
     </div>
     {/* <p>--------------DEBUG END--------------</p> */}
 

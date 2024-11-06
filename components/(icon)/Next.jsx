@@ -2,7 +2,7 @@
 export default function Next(props) {
     return (
         <svg 
-            className="w-16 bg-white"
+            className="w-16 bg-white hover:bg-[#c9c9fa]"
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 128 128"
         >
