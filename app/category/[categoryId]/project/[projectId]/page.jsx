@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useContext } from "react";
-import { useProjectContext } from "../../../../../context/ProjectContext";
+import { useProjectContext } from "@/context/ProjectContext";
 import ProjectDetailCard from "@/components/project-detail-card";
 
 const Project = ({ params }) => {
@@ -9,7 +9,7 @@ const Project = ({ params }) => {
   const [data, setData] = useState(null);
   const { projects } = useProjectContext();
   const project = projects.filter((project) => project.id.includes(param));
-  console.log("@@@@@@@@@@project: ", project);
+  // console.log("@@@@@@@@@@project: ", project);
   // const image = images.filter(image => image.tag.includes(param));
   // useEffect(() => {
   //   // Fetch the JSON data
@@ -30,9 +30,9 @@ const Project = ({ params }) => {
 
   return (
     <div>
-      Project
+      {/* Project
       <p>param: {param}</p>
-      <p>project.name: {project.name}</p>
+      <p>project.name: {project.name}</p> */}
       {project.map((p) => (
         <ProjectDetailCard
           name={p.name}
@@ -42,6 +42,7 @@ const Project = ({ params }) => {
           images={p.images}
           web={p.web}
           github={p.github}
+          sell={p.sell}
         />
       ))}
       {/* <ul> */}
