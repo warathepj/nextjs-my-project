@@ -25,6 +25,9 @@ export default function TopNavBar() {
         </Button>
         <DropdownMenuIcon />
         <Button variant="ghost" asChild>
+          <Link href="/project-list">Project List</Link>
+        </Button>
+        <Button variant="ghost" asChild>
           <Link href="/blog">Blog</Link>
         </Button>
       </div>

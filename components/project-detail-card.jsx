@@ -30,7 +30,8 @@ export default function ProjectDetailCard({
   images,
   web,
   github,
-  sell
+  sell,
+  sellId
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -86,10 +87,15 @@ export default function ProjectDetailCard({
           </div>
 
           {sell && (
-            <Link href='/sell'>
+            <Link href={`/sell/${sellId}`}>
             <Button>{sell}</Button>
           </Link>
           )}
+          {/* {sell && (
+            <Link href='/sell'>
+            <Button>{sell}</Button>
+          </Link>
+          )} */}
         </div>
       </CardContent>
     </Card>

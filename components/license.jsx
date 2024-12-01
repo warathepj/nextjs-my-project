@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "./ui/button";
 
 export default function LicenseRender({
   name,
@@ -9,13 +10,18 @@ export default function LicenseRender({
   permissions,
   limitations,
   conditions,
-  fullText
+  fullText,
+  idProp,
+  priceProp,
+  projectNameProp,
+  versionProp
 }) {
+  console.log("projectNameProps fm license: ", projectNameProp);
   return (
     <Card className="w-full max-w-3xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">{name}</CardTitle>
-        <CardDescription>Version: {version}</CardDescription>
+        <CardTitle className="text-2xl font-bold">{name} {projectNameProp}</CardTitle>
+        <CardDescription>Version: {versionProp}</CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground mb-4">{description}</p>
@@ -51,6 +57,12 @@ export default function LicenseRender({
         <ScrollArea className="h-[200px] w-full rounded-md border p-4">
           <pre className="text-sm whitespace-pre-wrap">{fullText}</pre>
         </ScrollArea>
+        <h1 className="text-red-800 mt-4 text-2xl">
+          สนใจสั่งซื้อซอร์สโค้ด id {idProp} ในราคา {priceProp} บาท
+          <a href="https://www.facebook.com/people/CorgiDev/61569425919262/" target="_blank" rel="noopener noreferrer">
+          <Button>คลิก</Button>
+        </a>
+        </h1>
       </CardContent>
       <CardFooter className="text-sm text-muted-foreground">
       </CardFooter>

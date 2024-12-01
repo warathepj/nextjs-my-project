@@ -43,6 +43,8 @@ const Project = ({ params }) => {
           web={p.web}
           github={p.github}
           sell={p.sell}
+          sellId={p.sellId}
+          // add new here
         />
       ))}
       {/* <ul> */}
