@@ -6,12 +6,16 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { House } from "lucide-react";
+import FastAPI from "@/components/(icon)/FastAPI";
+import PydanticAI from "@/components/(icon)/PydanticAI";
+import Shadcn from "@/components/(icon)/Shadcn";
 import Css from "@/components/(icon)/Css";
 import Html from "@/components/(icon)/Html";
 import Next from "@/components/(icon)/Next";
 import Rust from "@/components/(icon)/Rust";
 import Tailwind from "@/components/(icon)/Tailwind";
 import Javascript from "@/components/(icon)/Javascript";
+import Python from "./(icon)/Python";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +47,8 @@ export default function HamburgerMenu() {
           </Button>
         </SheetTrigger>
         <SheetContent side="bottom" className="h-[100dvh] pt-16">
-          <nav className="flex flex-col items-center justify-center h-full gap-4">
+          {/* <nav className="flex flex-col items-center justify-center h-full gap-4"> */}
+          <nav className="flex flex-row flex-wrap items-center justify-center h-full gap-1">
             <SheetTrigger asChild>
               <Link href="/">
                 <House className="w-10 h-10 hover:bg-[#c9c9fa]" />
@@ -51,7 +56,6 @@ export default function HamburgerMenu() {
             </SheetTrigger>
 
             <SheetTrigger asChild>
-
             <Link href="/blog">
               <Button>Blog</Button>
             </Link>
@@ -60,8 +64,34 @@ export default function HamburgerMenu() {
             {/* <Link href="/category/all">
               <Button>All Project</Button>
             </Link> */}
-            <SheetTrigger asChild>
 
+            {/* https://techicons.dev/?fbclid=IwAR04u5oWj1d_7Q4P1Ma-wGrsTSvEudYtiBfjgsxb49Ju4GltdYgG_qwgFTk */}
+
+            <SheetTrigger asChild>
+            <Link href="/category/python">
+              <Python />
+            </Link>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
+            <Link href="/category/pydanticai">
+              <PydanticAI />
+            </Link>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
+            <Link href="/category/fastapi">
+              <FastAPI />
+            </Link>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
+            <Link href="/category/shadcn">
+              <Shadcn />
+            </Link>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
             <Link href="/category/html">
               <Html />
             </Link>

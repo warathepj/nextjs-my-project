@@ -1,16 +1,71 @@
-'use client'
+"use client";
 
-import * as React from 'react'
-import Link from 'next/link'
+import * as React from "react";
+import Link from "next/link";
 // import { GithubIcon, TwitterIcon, LinkedinIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu";
+
+// Centralized list of categories
+const CATEGORIES = [
+  {
+    href: "/category/pydanticai",
+    label: "PydanticAI",
+    icon: null, // Optional: you can add icon components later if needed
+  },
+  {
+    href: "/category/html",
+    label: "HTML",
+    icon: null, // Optional: you can add icon components later if needed
+  },
+  {
+    href: "/category/css",
+    label: "CSS",
+    icon: null,
+  },
+  {
+    href: "/category/tailwind",
+    label: "Tailwind CSS",
+    icon: null,
+  },
+  {
+    href: "/category/javascript",
+    label: "Javascript",
+    icon: null,
+  },
+  {
+    href: "/category/next",
+    label: "Next JS",
+    icon: null,
+  },
+  {
+    href: "/category/rust",
+    label: "Rust",
+    icon: null,
+  },
+  // You can easily add more categories here
+  {
+    href: "/category/python",
+    label: "Python",
+    icon: null,
+  },
+  {
+    href: "/category/fastapi",
+    label: "FastAPI",
+    icon: null,
+  },
+  {
+    href: "/category/shadcn",
+    label: "Shadcn",
+    icon: null,
+  },
+];
 
 export default function DropdownMenuIcon() {
   return (
@@ -19,43 +74,15 @@ export default function DropdownMenuIcon() {
         <Button variant="outline">Project Category</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuItem asChild>
-          <Link href="/category/html" className="flex items-center">
-            {/* <GithubIcon className="mr-2 h-4 w-4" /> */}
-            <span>html</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/category/css" className="flex items-center">
-            {/* <TwitterIcon className="mr-2 h-4 w-4" /> */}
-            <span>css</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/category/tailwind" className="flex items-center">
-            {/* <LinkedinIcon className="mr-2 h-4 w-4" /> */}
-            <span>Tailwind CSS</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/category/javascript" className="flex items-center">
-            {/* <LinkedinIcon className="mr-2 h-4 w-4" /> */}
-            <span>Javascript</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/category/next" className="flex items-center">
-            {/* <LinkedinIcon className="mr-2 h-4 w-4" /> */}
-            <span>Next JS</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/category/rust" className="flex items-center">
-            {/* <LinkedinIcon className="mr-2 h-4 w-4" /> */}
-            <span>Rust</span>
-          </Link>
-        </DropdownMenuItem>
+        {CATEGORIES.map((category, index) => (
+          <DropdownMenuItem key={index} asChild>
+            <Link href={category.href} className="flex items-center">
+              {category.icon && <category.icon className="mr-2 h-4 w-4" />}
+              <span>{category.label}</span>
+            </Link>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

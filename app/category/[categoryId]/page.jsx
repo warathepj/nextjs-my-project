@@ -13,9 +13,9 @@ const Category = ({ params }) => {
     <div>
       Category
     {/* <pre>project: {project}</pre>  */}
-    <pre>param: {param}</pre> 
+    {/* <pre>param: {param}</pre> 
     <pre>params.categoryId: {params.categoryId}</pre> 
-    <pre>tech-stack: {projects.techStack}</pre>
+    <pre>tech-stack: {projects.techStack}</pre> */}
     <div className="flex flex-col items-center">
 
     {project.map((p) => (
