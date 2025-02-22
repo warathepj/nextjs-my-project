@@ -34,7 +34,8 @@ export default function HamburgerMenu() {
     <div 
       className="
         fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 
-        bg-[#000033] px-96 pt-2 pb-5 mb-[-1.5rem]">
+        bg-[#000033] px-[40rem] pt-2 pb-5 mb-[-1.5rem]"
+    >
       <Sheet className="bg-[#000033]" open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 export default function ProjectCard({ name, description, techStack }) {
   return (
     // <Card className="w-full max-w-md mb-4">
-    <Card className="w-80 h-60 mb-4 md:mx-1">
+    <Card className="w-80 h-72 mb-4 md:mx-1">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">{name}</CardTitle>
         <CardDescription className="text-sm text-muted-foreground">
