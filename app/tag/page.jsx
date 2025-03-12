@@ -16,7 +16,7 @@ const Tag = () => {
       <h1 className="text-2xl font-bold mb-6">All Tags</h1>
       <div className="flex flex-wrap gap-2">
         {uniqueTags.map((tag) => (
-          <Link key={tag} href={`/category/${tag}`}>
+          <Link key={tag} href={`/separate-by-tag/${tag}`}>
             <Badge 
               variant="secondary" 
               className="cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700"
